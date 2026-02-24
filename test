@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PixenSavit</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: black;
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+h1 {
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+.category {
+    border: 1px solid white;
+    padding: 20px;
+    margin: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.category:hover {
+    box-shadow: 0 0 20px white;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    background: white;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#cart {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: #111;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#chat {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: white;
+    color: black;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.review {
+    border-top: 1px solid white;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid white;
+    margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>PIXENSAVIT</h1>
+<p>Loja Digital • Atendimento Rápido • Confiança</p>
+</header>
+
+<div class="category" onclick="toggle('roblox')">
+<h2>Roblox</h2>
+<p>Valores de R$ 0,90 até R$ 400,00</p>
+<div id="roblox" class="hidden">
+<p>Para mais informações sobre valores e disponibilidade, entre em contato.</p>
+<button onclick="contact()">Solicitar Informações</button>
+<div class="review">
+★★★★★ <br>
+Cliente: Entrega rápida
+</div>
+</div>
+</div>
+
+<div class="category" onclick="toggle('ff')">
+<h2>Free Fire</h2>
+<p>Serviços disponíveis sob consulta</p>
+<div id="ff" class="hidden">
+<p>Chame no WhatsApp para detalhes.</p>
+<button onclick="contact()">Solicitar Informações</button>
+<div class="review">
+★★★★☆ <br>
+Cliente: Recomendo
+</div>
+</div>
+</div>
+
+<div class="category" onclick="toggle('stream')">
+<h2>Assinaturas Digitais</h2>
+<p>Diversas opções disponíveis</p>
+<div id="stream" class="hidden">
+<p>Entre em contato para mais informações.</p>
+<button onclick="contact()">Solicitar Informações</button>
+<div class="review">
+★★★★★ <br>
+Cliente: Funcionou perfeitamente
+</div>
+</div>
+</div>
+
+<div class="category">
+<h2>Sistema de Doação</h2>
+<p>Ajude o site a crescer</p>
+<p>Pix: <strong>47 999521535</strong></p>
+<button onclick="copyPix()">Copiar Pix</button>
+</div>
+
+<div id="cart">
+<h2>Contato Rápido</h2>
+<p>WhatsApp:</p>
+<strong>47 999521535</strong>
+<br><br>
+<button onclick="contact()">Abrir Conversa</button>
+</div>
+
+<div id="chat" onclick="contact()">
+Falar comigo
+</div>
+
+<footer>
+<p>Entre no nosso Discord:</p>
+<a href="https://discord.gg/cFAW49ukkq" target="_blank" style="color:white;">
+discord.gg/cFAW49ukkq
+</a>
+<br><br>
+PixenSavit © 2026
+</footer>
+
+<script>
+function toggle(id){
+    let element = document.getElementById(id);
+    element.classList.toggle("hidden");
+}
+
+function contact(){
+    window.open("https://wa.me/5547999521535");
+}
+
+function copyPix(){
+    navigator.clipboard.writeText("47999521535");
+    alert("Pix copiado!");
+}
+</script>
+
+</body>
+</html>
